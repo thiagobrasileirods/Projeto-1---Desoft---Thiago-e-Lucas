@@ -26,3 +26,14 @@ def define_posicoes(linha, coluna, orientacao, tamanho):
         return posicoes
 
 
+def preenche_frota(dicio, nome, linha, coluna, orientacao, tamanho):
+        if nome not in dicio:
+            dicio[nome] = []
+        posicaonova = define_posicoes(linha, coluna, orientacao, tamanho)
+        dicio[nome].append(posicaonova)
+        return dicio 
+
+
+
+
+
