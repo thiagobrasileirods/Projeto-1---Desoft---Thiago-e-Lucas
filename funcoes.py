@@ -79,5 +79,19 @@ def afundados(frota, tabuleiro):
                 count = 0
     return afundados
 
+def posicao_valida(frota, linha, coluna, orientacao, tamanho):
+    validacao = True
+    posicoes = define_posicoes(linha, coluna, orientacao, tamanho) #lista que os elementos são listas.
+    for lista in frota.values():
+        for i in range(len(lista)):
+            for j in range(len(posicoes)):
+                if posicoes[j] in lista[i]:
+                    validacao = False
+    for posicao in posicoes:
+        x = posicao[0]
+        y = posicao[1]
+        if (x>=10) or (y>=10):
+            validacao = False
 
-
+    return validacao
+            
