@@ -37,8 +37,31 @@ def preenche_frota(dicio, nome, linha, coluna, orientacao, tamanho):
 
 def faz_jogada(tabuleiro, linha, coluna):
     if tabuleiro[linha][coluna] ==1:
-        tabuleiro[linha][coluna] = "x"
+        tabuleiro[linha][coluna] = "X"
     elif tabuleiro[linha][coluna] ==0:
         tabuleiro[linha][coluna] = "-"
     return tabuleiro
+
+
+def posiciona_frota(frota):
+    grid = [
+          [0,0,0,0,0,0,0,0,0,0],
+          [0,0,0,0,0,0,0,0,0,0],
+          [0,0,0,0,0,0,0,0,0,0],
+          [0,0,0,0,0,0,0,0,0,0],
+          [0,0,0,0,0,0,0,0,0,0],
+          [0,0,0,0,0,0,0,0,0,0],
+          [0,0,0,0,0,0,0,0,0,0],
+          [0,0,0,0,0,0,0,0,0,0],
+          [0,0,0,0,0,0,0,0,0,0],
+          [0,0,0,0,0,0,0,0,0,0],
+    ]
+    for lista in frota.values():
+        for i in range(len(lista)):
+            for j in range(len(lista[i])):
+                linha = lista[i][j][0]
+                coluna = lista[i][j][1]
+                grid[linha][coluna] = 1
+    return grid
+
 
