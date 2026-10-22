@@ -35,5 +35,10 @@ def preenche_frota(dicio, nome, linha, coluna, orientacao, tamanho):
 
 
 
-
+def faz_jogada(tabuleiro, linha, coluna):
+    if tabuleiro[linha][coluna] ==1:
+        tabuleiro[linha][coluna] = "x"
+    elif tabuleiro[linha][coluna] ==0:
+        tabuleiro[linha][coluna] = "-"
+    return tabuleiro
 
