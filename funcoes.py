@@ -64,4 +64,20 @@ def posiciona_frota(frota):
                 grid[linha][coluna] = 1
     return grid
 
+def afundados(frota, tabuleiro):
+    count = 0
+    afundados = 0
+    for lista in frota.values():
+            for i in range(len(lista)):
+                for j in range(len(lista[i])):
+                    linha = lista[i][j][0]
+                    coluna = lista[i][j][1]
+                    if tabuleiro[linha][coluna] == "X":
+                        count +=1
+                if count == len(lista[i]):
+                    afundados+=1
+                count = 0
+    return afundados
+
+
 
